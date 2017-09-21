@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Todo App</title>
+</head>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<body>
+    {{> header}} {{#each todos}}
+    <div>
+        <h4>Todo : {{text}}</h4>
+        <P>Completed : {{completed}}</P>
+    </div>
+    {{/each}}
+</body>
+
+</html>
