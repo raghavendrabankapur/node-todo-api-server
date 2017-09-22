@@ -1,6 +1,6 @@
 const express = require("express");
 const hbs = require("hbs");
-var https = require("https");
+const axios = require("axios");
 
 const port = process.env.PORT || 3000;
 var app = express();
@@ -23,17 +23,13 @@ app.get("/", (req, res) => {
 });
 
 app.get("/todos", (req, res) => {
-  res.render("todos.hbs", {
-    pagetitle: "Todo list",
-    todos: [
-      {
-        _id: "59c2137d36ac4900129f556c",
-        text: "from postmane",
-        __v: 0,
-        completedAt: null,
-        completed: true
-      }
-    ]
+  axios.get("https://pure-temple-17860.herokuapp.com/todos").then(response => {
+    if (response !== "ZERO_RESULTS") {
+      res.render("todos.hbs", {
+        pagetitle: "Todo list",
+        todos: response.data.todos
+      });
+    }
   });
 });
 

@@ -13,11 +13,13 @@
 <body>
     {{> header}} 
     {{#each todos}}
+    <div>
        {{#if completed}}
             <input type="checkbox" class="panel panel-success" checked>{{text}}</input>
        {{else}}
             <input type="checkbox" class="panel panel-danger">{{text}}</div>
         {{/if}}
+        </div>
     {{/each}}
 </body>
 

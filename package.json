@@ -10,9 +10,9 @@
   "author": "Raghavendra Bankapur",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.16.2",
     "express": "^4.15.4",
-    "hbs": "^4.0.1",
-    "xmlhttprequest": "^1.8.0"
+    "hbs": "^4.0.1"
   },
   "devDependencies": {}
 }
