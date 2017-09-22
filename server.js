@@ -1,6 +1,5 @@
 const express = require("express");
 const hbs = require("hbs");
-const _ = require('lodash')
 var https = require("https");
 
 const port = process.env.PORT || 3000;
