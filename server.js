@@ -34,6 +34,17 @@ app.get("/todos", (req, res) => {
   });
 });
 
+app.get("/todos/:text", (req, res)=>{
+  axios.get(`https://pure-temple-17860.herokuapp.com/todos/${req.params.text}`).then(response =>{
+    if(response !== "ZERO_RESULTS"){
+      res.render("/view", {
+        pagetitle:req.params.text,
+        todos:response
+      })
+    }
+  })
+});
+
 app.listen(port, () => {
   console.log(`Server is up on port ${port}`);
 });
